@@ -39,6 +39,22 @@ function register_assets()
         null,
         true
     );
+
+    wp_enqueue_script(
+        'splitting',
+        'https://unpkg.com/splitting@1.0.6/dist/splitting.min.js',
+        [],
+        null,
+        true
+    );
+
+    wp_enqueue_script(
+        'theme-script',
+        get_template_directory_uri() . '/script.js',
+        ['splitting'],
+        wp_get_theme()->get('Version'),
+        true
+    );
 }
 
 function theme_filter($title)

@@ -11,11 +11,178 @@ Text Domain: theme_999
 Tags: custom-background, custom-menu, featured-images, one-column, blog
 */
 
-body {
-    font-family: -apple-system, "Tahoma", BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    color: #333;
-    background: #f8f9fa;
+@font-face {
+    font-family: "octosquares";
+    src:  url("./assets/font/octosquares.ttf") format("truetype"),
+    url("./assets/font/octosquares.ttf") format("truetype");
 }
+
+
+@font-face {
+    font-family: "glacialIndifference";
+    src:  url("./assets/font/glacialIndifference.otf") format("opentype"),
+    url("./assets/font/glacialIndifference.ttf") format("opentype");
+}
+
+/* slider */
+.games-slider{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+}
+
+.slider-title{
+    color:#fff;
+    font-size:4rem;
+    font-weight:300;
+}
+
+.game-card{
+    background:#000;
+    border:3px solid #fff;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow: rgb(0 0 0 / 98%) 0px 2px 4px, rgb(0 0 0 / 63%) 0px 7px 13px -3px, rgb(0 0 0 / 57%) 0px -3px 0px inset;
+    height:420px;
+}
+.carousel-inner {
+    overflow: visible !important;
+}
+
+.carousel-item {
+    box-shadow: none !important;
+}
+.game-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.custom-arrow{
+    width:5%;
+}
+
+.custom-arrow span{
+    transform:scale(1.5);
+    filter:invert(1);
+}
+
+
+:root {
+    --main-background:  #00378b;
+    --main-background-center:  #0fc1e06d;
+    --main-background-around:  #14035d;
+    --main-color-text: rgb(234, 234, 234);
+    
+}
+
+/* fin de slider */
+/* header */
+
+        .navbarCss {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+
+        a {
+            text-decoration: none !important;
+            color: none !important;
+            font-weight: 800;
+        }
+
+
+        .social-sidebar {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1050;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .social-sidebar a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            transition: width 0.3s ease, padding-right 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .social-sidebar a:first-child  { border-radius: 0 8px 0 0; }
+        .social-sidebar a:last-child   { border-radius: 0 0 8px 0; }
+
+        .social-sidebar a.facebook  { background-color: #1877F2; }
+        .social-sidebar a.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .social-sidebar a.twitter   { background-color: #000; }
+        .social-sidebar a.youtube   { background-color: #FF0000; }
+        .social-sidebar a.linkedin  { background-color: #0A66C2; }
+        .social-sidebar a.tiktok    { background-color: #010101; }
+
+        .social-sidebar a svg {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            fill: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .social-sidebar {
+                display: none;
+            }
+        }
+
+
+/* fin de header */
+
+
+body {
+    font-family: 'glacialIndifference', Tahoma, sans-serif;
+    color: var(--main-color-text);
+    margin: 0;
+    background-color: var(--main-background);
+
+
+}
+
+.backgroundBlur {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    
+    z-index: -1;
+    pointer-events: none;
+
+    background: radial-gradient(circle, var(--main-background-center) 0%, var(--main-background-around) 100%);
+    filter: blur(80px);
+
+    transform-origin: center;
+    animation: gradientBG 40s linear infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+    transform: rotate(0deg);
+    }
+    50% {
+    transform: rotate(180deg);
+    }
+    100% {
+    transform: rotate(360deg);
+    }
+}
+
 
 /* couleur globale */
 
@@ -25,6 +192,10 @@ a {
 
 a:hover {
     color: #0a58ca;
+}
+
+h1 {
+    font-family: 'octosquares', "Tahoma", BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 .site-branding {
@@ -76,3 +247,8 @@ a:hover {
 .image-rounded {
     border-radius: 15px;
 }
+
+
+
+
+/* blurred */
