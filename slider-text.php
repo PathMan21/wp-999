@@ -25,7 +25,7 @@ get_header();
 
         <!-- TEXTE -->
         <div class="col-lg-6">
-            <p class="text-uppercase text-muted small mb-2">
+            <p class="white text-uppercase text-muted small mb-2">
                 Projet 999
             </p>
 
@@ -47,8 +47,7 @@ get_header();
             <?php
             $images = [
                 get_template_directory_uri() . '/assets/img/image1.jpg',
-                get_template_directory_uri() . '/assets/img/image2.png',
-                get_template_directory_uri() . '/assets/img/image1.png',
+                get_template_directory_uri() . '/assets/img/image2.png'
             ];
             ?>
 
@@ -82,39 +81,6 @@ get_header();
 <section class="container py-5">
     <div class="row g-4">
 
-        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-            <div class="col-md-6 col-lg-4 d-flex">
-
-                <a href="<?php the_permalink(); ?>" class="text-decoration-none text-dark w-100">
-
-                    <div class="card shadow-sm h-100 card-hover">
-
-                        <?php the_post_thumbnail('medium', ['class' => 'card-img-top']); ?>
-
-                        <div class="card-body d-flex flex-column">
-
-                            <h3 class="card-title text-muted"><?php the_title(); ?></h3>
-
-                            <h6 class="card-subtitle mb-2 text-muted">
-                                <?php the_author(); ?> - <?php echo get_the_date(); ?>
-                                <br>
-                                <?php the_tags('<span>', ', ', '</span>'); ?>
-                            </h6>
-
-                            <p class="card-text">
-                                <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </a>
-
-            </div>
-
-        <?php endwhile; endif; ?>
 
     </div>
 </section>

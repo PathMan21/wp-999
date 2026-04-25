@@ -6,11 +6,13 @@
 
 get_header(); ?>
 
-
-<section class="games-slider py-5">
+<div class="d-flex justify-content-center">
+        <h1>Nos jeux</h1>
+</div>
+<section class="games-slider mx-auto">
+    
     <div class="container position-relative">
 
-        <h2 class="slider-title mb-5">Nos jeux</h2>
 
         <div id="gamesCarousel" class="carousel slide" data-bs-ride="false">
 
