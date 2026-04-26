@@ -48,9 +48,9 @@ $query->the_post();
             <p class="card-text">
                 <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
             </p>
-             <a href="<?php the_permalink(); ?>">
+             <a href="<?php echo esc_url(the_permalink()); ?>">
             <div class="radio-wrapper">     
-                <input class="input" name="btn" id="value-1" type="radio" />
+                <input class="input" name="btn" id="value-1" type="radio" onclick="window.location.href='<?php echo esc_url( get_permalink() ); ?>'" />
                 <div class="btn">
                 <span aria-hidden=""></span>Lire
                 <span class="btn__glitch" aria-hidden="">Lire</span>

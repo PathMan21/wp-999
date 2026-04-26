@@ -350,8 +350,10 @@ h1 {
 }
 
 .site-footer {
-    background: #212529;
+    background: transparent;
+    
     color: rgba(255,255,255,.8);
+    border-top: solid 0.4px rgba(255, 255, 255, 0.248) ;
 }
 
 .site-footer a {

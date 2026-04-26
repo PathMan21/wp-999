@@ -1,8 +1,14 @@
 <footer class="site-footer py-3 mt-auto">
     <div class="container text-center">
-        <p class="mb-1">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
-        <p class="small">Un thème vitrine simple pour WordPress avec Bootstrap.</p>
+		
+    <div style="grid-template-columns: 1fr 1fr 1fr 1fr;" class="d-grid gap-2">
+        <p class="mb-1 p-2">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
+        <p class="p-2 small text-muted">Nos pages</p>
+		        <p class="p-2 small text-muted"> nous contacter </p>
+		        <p class="p-2 small text-muted">Plus d'infos</p>
+
     </div>
+	</div>
 </footer>
 
 <!-- <div class="scanlines"></div>
