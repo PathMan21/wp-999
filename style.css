@@ -129,7 +129,7 @@ Tags: custom-background, custom-menu, featured-images, one-column, blog
 }
 
 .card-img, .card-img-top {
-    border-radius: 18px;
+    border-radius: 15px;
 }
 
 :root {
@@ -743,7 +743,21 @@ body::after {
 .form-switch .form-check-input:focus {
     box-shadow: 0 0 0 3px rgba(135, 206, 235, 0.3) !important;
 }
+.dynamic-display .modal-avatar {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+    border: 1px solid var(--accent);
+    overflow: hidden;
+}
 
+.dynamic-display .modal-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.8) brightness(0.9);
+}
 /* btn futuristic */
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
@@ -1151,4 +1165,20 @@ body::after {
   top: 0;
   left: 81%;
   line-height: 6.2px;
+}
+
+
+.card-custom-img {
+      height: 70%;
+      width: 100%;
+    object-fit: cover;
+}
+
+.card-custom-style {
+    width: 18rem;
+    height: 21rem;
+}
+
+.card-custom-style .card-img-top {
+    border-radius: 15px 15px 0px 0px;
 }
