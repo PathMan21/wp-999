@@ -23,12 +23,20 @@ get_header(); ?>
             <div class="carousel-inner">
  <?php
         $images = [
-            get_template_directory_uri() . '/assets/img/image-jeu1.png',
-            get_template_directory_uri() . '/assets/img/image-jeu2.png',
-            get_template_directory_uri() . '/assets/img/image-jeu-placeholder.png',
+            [ 'image' => get_template_directory_uri() . '/assets/img/image-jeu1.png',
+            'href' => 50, 
+            'alt' => "jeu1"
+            ],
+            [ 'image' => get_template_directory_uri() . '/assets/img/image-jeu2.png',
+            'href' => 52, 
+            'alt' => "jeu2"
+            ],
+            [ 'image' => get_template_directory_uri() . '/assets/img/image-jeu-placeholder.png',
+            'href' => 0, 
+            'alt' => "jeu3"
+            ]
         ];
 
-        $chunks = array_chunk($images, 3);
         ?>
 
         <div id="gamesCarousel" class="carousel slide" data-bs-ride="false">
@@ -42,17 +50,16 @@ get_header(); ?>
             <div class="carousel-inner">
 
                 <?php $active = true; ?>
-                <?php foreach($chunks as $group): ?>
+                <?php foreach($images as $img): ?>
                     <div class="carousel-item <?php if($active){ echo 'active'; $active = false; } ?>">
-                        <div class="row g-4 justify-content-center">
-
-                            <?php foreach($group as $img): ?>
-                                <div class="col-md-4">
+                        <div class="row g-12 justify-content-center">
+                                <div class="col-md-12">
                                     <div class="game-card">
-                                        <img src="<?php echo $img; ?>" alt="Jeu" class="img-fluid">
+                                        <a href="<?php echo get_permalink($img['href']); ?>">
+                                            <img src="<?php echo esc_url($img['image']); ?>" alt="Jeu" class="img-fluid">
+                                        </a>
                                     </div>
                                 </div>
-                            <?php endforeach; ?>
 
                         </div>
                     </div>
